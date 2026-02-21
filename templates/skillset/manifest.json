@@ -1,0 +1,43 @@
+{
+  "name_for_human": "My Skillset",
+  "name_for_model": "my_skillset",
+  "description_for_human": "A sample skillset that demonstrates how to expose functions to GitHub Copilot.",
+  "description_for_model": "Use these skills to look up weather and search documentation.",
+  "skills": [
+    {
+      "id": "getWeather",
+      "description": "Get the current weather for a specified city.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "description": "The name of the city, e.g. 'London' or 'Tokyo'"
+          }
+        },
+        "required": ["city"]
+      },
+      "inference_url": "REPLACE_WITH_YOUR_URL/skills/getWeather"
+    },
+    {
+      "id": "searchDocs",
+      "description": "Search internal documentation for a given query and return matching snippets.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The search query string"
+          },
+          "maxResults": {
+            "type": "integer",
+            "description": "Maximum number of results to return (default: 5)",
+            "default": 5
+          }
+        },
+        "required": ["query"]
+      },
+      "inference_url": "REPLACE_WITH_YOUR_URL/skills/searchDocs"
+    }
+  ]
+}
